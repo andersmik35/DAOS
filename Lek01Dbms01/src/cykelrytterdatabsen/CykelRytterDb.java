@@ -78,6 +78,62 @@ public class CykelRytterDb {
             switch (e.getErrorCode())
             // fejl-kode 547 svarer til en foreign key fejl
             {
+
+                //Cases for errors which is not updated with the "CykelRytter" database
+                case 547: {
+                    if (e.getMessage().contains("cprforeign"))
+                        System.out.println("cpr-nummer er ikke oprettet");
+                    else if (e.getMessage().contains("firmaforeign"))
+                        System.out.println("firmaet er ikke oprettet");
+                    else
+                        System.out.println("ukendt fremmednøglefejl");
+                    break;
+                }
+                // fejl-kode 2627 svarer til primary key fejl
+                case 2627: {
+                    System.out.println("den pågældende ansættelse er allerede oprettet");
+                    break;
+                }
+                default:
+                    System.out.println("fejlSQL:  " + e.getMessage());
+            }
+            ;
+        } catch (Exception e) {
+            System.out.println("fejl:  " + e.getMessage());
+        }
+    }
+
+    ;
+
+    public static void insertprepared() {
+        try {
+            // indl�sning
+            System.out.println("Vi vil nu oprette et nyt registrering");
+            System.out.println("Indtast aarstal");
+            String aarstal = inLine.readLine();
+            System.out.println("Indtast init");
+            String init = inLine.readLine();
+            System.out.println("Indtast placering");
+            String plac = inLine.readLine();
+            // Anvendelse af prepared statement
+            String sql = "insert into placering values (?,?,?)";
+            PreparedStatement prestmt = minConnection.prepareStatement(sql);
+            prestmt.clearParameters();
+            prestmt.setString(1, aarstal);
+            prestmt.setString(2, init);
+            prestmt.setInt(3,Integer.parseInt(plac));
+            // Udf�rer s�tningen
+            prestmt.execute();
+            // p�nt svar til brugeren
+            System.out.println("Registreringen er nu registreret");
+            if (!minConnection.isClosed()) minConnection.close();
+        } catch (SQLException e) {
+            switch (e.getErrorCode())
+            // fejl-kode 547 svarer til en foreign key fejl
+            {
+
+                //Cases for errors which is not updated with the "CykelRytter" database
+
                 case 547: {
                     if (e.getMessage().contains("cprforeign"))
                         System.out.println("cpr-nummer er ikke oprettet");
@@ -123,6 +179,7 @@ public class CykelRytterDb {
             System.out.println("s for select uden parameter  ");
             System.out.println("sp for select med parameter  ");
             System.out.println("i for insert med strengmanipulation");
+            System.out.println("ps for insert med insertprepared");
             String in = inLine.readLine();
             switch (in) {
                 case "s": {
@@ -133,8 +190,12 @@ public class CykelRytterDb {
                     selectmedparm();
                     break;
                 }
-                case "i":{
-                    insertmedstring();break;
+                case "i": {
+                    insertmedstring();
+                    break;
+                }
+                case "ps": {
+                    insertprepared();break;
                 }
 
                 default:
@@ -144,60 +205,7 @@ public class CykelRytterDb {
             System.out.println("fejl:  " + e.getMessage());
         }
     }
-
-
-    public static void insertprepared() {
-        try {
-            // indl�sning
-            System.out.println("Vi vil nu oprette et nyt ansættelsesforhold");
-            System.out.println("Indtast cpr (personen skal være oprettet på forhånd");
-            String cprstr=inLine.readLine();
-            System.out.println("Indtast firmanr (firma skal være oprettet på forhånd");
-            String firmastr=inLine.readLine();
-            // Anvendelse af prepared statement
-            String sql = "insert into ansati values (?,?)";
-            PreparedStatement prestmt = minConnection.prepareStatement(sql);
-            prestmt.clearParameters();
-            prestmt.setString(1,cprstr);
-            prestmt.setInt(2,Integer.parseInt(firmastr));
-            // Udf�rer s�tningen
-            prestmt.execute();
-            // p�nt svar til brugeren
-            System.out.println("Ansættelsen er nu registreret");
-            if (!minConnection.isClosed()) minConnection.close();
-        }
-        catch (SQLException e) {
-            switch (e.getErrorCode())
-            // fejl-kode 547 svarer til en foreign key fejl
-            { case 547 : {if (e.getMessage().contains("cprforeign"))
-                System.out.println("cpr-nummer er ikke oprettet");
-            else
-            if (e.getMessage().contains("firmaforeign"))
-                System.out.println("firmaet er ikke oprettet");
-            else
-                System.out.println("ukendt fremmednøglefejl");
-                break;
-            }
-            // fejl-kode 2627 svarer til primary key fejl
-                case 2627: {System.out.println("den pågældende ansættelse er allerede oprettet");
-                    break;
-                }
-                default: System.out.println("fejlSQL:  "+e.getMessage());
-            };
-        }
-        catch (Exception e) {
-            System.out.println("fejl:  "+e.getMessage());
-        }
-    };
-
-
 }
-
-
-
-
-
-
 
 
 
