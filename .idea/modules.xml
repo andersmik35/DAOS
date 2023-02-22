@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DMBS.iml" filepath="$PROJECT_DIR$/DMBS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lek01Dbms01/Lek01Dbms01.iml" filepath="$PROJECT_DIR$/Lek01Dbms01/Lek01Dbms01.iml" />
+    </modules>
+  </component>
+</project>
