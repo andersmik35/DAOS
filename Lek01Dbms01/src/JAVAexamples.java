@@ -1,12 +1,6 @@
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JAVAexamples {
 
@@ -153,7 +147,7 @@ public class JAVAexamples {
 			                                       //virker det ikke - prøv kun med localhost
 			String dbnavn="eksempeldb";            //virker måske hos dig 
 			String login="sa";                     //skal ikke ændres
-			String password="torben07";            //skal ændres 
+			String password="123";            //skal ændres
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			minConnection = DriverManager.getConnection("jdbc:sqlserver://"+server+";databaseName="+dbnavn+
 					";user=" + login + ";password=" + password + ";");
