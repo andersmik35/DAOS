@@ -195,7 +195,8 @@ public class CykelRytterDb {
                     break;
                 }
                 case "ps": {
-                    insertprepared();break;
+                    insertprepared();
+                     break;
                 }
 
                 default:

@@ -99,7 +99,7 @@ public class JAVAexamples {
 			System.out.println("Vi vil nu oprette et nyt ansættelsesforhold");
 			System.out.println("Indtast cpr (personen skal være oprettet på forhånd");
 			String cprstr=inLine.readLine();
-			System.out.println("Indtast firmanr (firma skal være oprettet på forhånd");
+			System.out.println("Indtast fi rmanr (firma skal være oprettet på forhånd");
 			String firmastr=inLine.readLine();
 			// Anvendelse af prepared statement
 			String sql = "insert into ansati values (?,?)";
