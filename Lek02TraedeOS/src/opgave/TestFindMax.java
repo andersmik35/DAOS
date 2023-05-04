@@ -55,22 +55,22 @@ public class TestFindMax {
     }
 
 
-    public static int maxAmountOfThreads(int maxThreads) throws InterruptedException {
-        int maxValue = Integer.MIN_VALUE;
-        HashSet<MaxValueThread> threads = new HashSet<>();
-        for (int i = 0; i < board.length; i++) {
-            MaxValueThread thread = new MaxValueThread(board[i]);
-            thread.start();
-            threads.add(thread);
-        }
-        for (MaxValueThread thread : threads) {
-            thread.join();
-            if (thread.getMaxValue() > maxValue) {
-                maxValue = thread.getMaxValue();
-            }
-        }
-        return maxValue;
-    }
+//    public static int maxAmountOfThreads(int maxThreads) throws InterruptedException {
+//        int maxValue = Integer.MIN_VALUE;
+//        HashSet<MaxValueThread> threads = new HashSet<>();
+//        for (int i = 0; i < board.length; i++) {
+//            MaxValueThread thread = new MaxValueThread(board[i]);
+//            thread.start();
+//            threads.add(thread);
+//        }
+//        for (MaxValueThread thread : threads) {
+//            thread.join();
+//            if (thread.getMaxValue() > maxValue) {
+//                maxValue = thread.getMaxValue();
+//            }
+//        }
+//        return maxValue;
+//    }
 
 
 
