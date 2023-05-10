@@ -4,7 +4,7 @@ public class TestBankAccount {
     private static int turn;
     private static boolean[] flag;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         flag = new boolean[2];
         flag[0] = false;
         flag[1] = false;
@@ -16,6 +16,11 @@ public class TestBankAccount {
 
         bat1.start();
         bat2.start();
+
+        bat1.join();
+        bat2.join();
+
+        System.out.println("Balancen er: " + ba.getBalance());
     }
 
     public static boolean getFlag(int i) {
