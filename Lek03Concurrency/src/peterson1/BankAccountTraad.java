@@ -1,4 +1,4 @@
-package BankAccount;
+package peterson1;
 
 public class BankAccountTraad extends Thread {
 
