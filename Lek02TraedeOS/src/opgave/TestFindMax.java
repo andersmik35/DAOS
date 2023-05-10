@@ -11,7 +11,7 @@ public class TestFindMax {
     public static void main(String[] args) {
         fillBoard();
         printBoard();
-        long l1 = System.nanoTime();
+        long l1 = System.nanoTime(); 
         System.out.println("Max: " + findMax());
         try {
             System.out.println("Max: " +

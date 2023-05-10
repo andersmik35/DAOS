@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Daos.iml" filepath="$PROJECT_DIR$/Daos.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek01Dbms01/Lek01Dbms01.iml" filepath="$PROJECT_DIR$/Lek01Dbms01/Lek01Dbms01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek02TraedeOS/Lek02TraedeOS.iml" filepath="$PROJECT_DIR$/Lek02TraedeOS/Lek02TraedeOS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lek03Concurrency/Lek03Concurrency.iml" filepath="$PROJECT_DIR$/Lek03Concurrency/Lek03Concurrency.iml" />
     </modules>
   </component>
 </project>
