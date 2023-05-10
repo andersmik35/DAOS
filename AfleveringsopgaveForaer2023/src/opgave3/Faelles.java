@@ -1,4 +1,4 @@
-package opgave1;
+package opgave3;
 
 import java.util.Random;
 
@@ -7,7 +7,6 @@ public class Faelles {
 
     public Faelles() {
     }
-
 
     public void tagerRandomTid(int max){
         Random r = new Random();
