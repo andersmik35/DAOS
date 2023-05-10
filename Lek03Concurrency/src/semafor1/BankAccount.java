@@ -4,20 +4,28 @@ import java.util.concurrent.Semaphore;
 
 public class BankAccount {
 
-	private Semaphore s = new Semaphore(1);
-	private double balance;
+    private Semaphore s = new Semaphore(1);
+    private double balance;
 
-	public void setBalance(double amount, String action) {
-		if (action.equals("c")) {
-			balance = balance + amount;
-		}
-		if (action.equals("d")){
-			balance = balance - amount;
-		}
-		
-	}
+    public void setBalance(double amount, String action) {
+        try {
+            s.acquire();
 
-	public double getBalance() {
-		return balance;
-	}
+            if (action.equals("c")) {
+                balance = balance + amount;
+            }
+            if (action.equals("d")) {
+                balance = balance - amount;
+            }
+            s.release();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public double getBalance() {
+        return balance;
+    }
 }
