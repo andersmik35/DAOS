@@ -20,7 +20,7 @@ public class MyThread extends Thread {
             while (Main.getFlag(concurrentId) && Main.getTurn() == concurrentId) {}
             faelles.kritisksection();
             Main.setFlag(thisId, false);
-            faelles.tagerRandomTid(1000);
+            faelles.tagerRandomTid(500);
         }
 
         System.out.println("Jeg er færdig: " + navn + " " + faelles.getGlobal());

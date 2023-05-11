@@ -22,7 +22,7 @@ public class Faelles {
         return global;
     }
 
-    public void kritisksection(){
+    public synchronized void kritisksection(){
         int temp;
         temp = global;
         tagerRandomTid(100);
