@@ -5,10 +5,17 @@ import java.util.Random;
 public class Faelles {
     private int global = 0;
 
+    /**
+     * Konstrukter for klassen Faelles
+     */
     public Faelles() {
     }
 
-
+    /**
+     * Metode der tager random tid så simuleringen af en kritisk section kan køre
+     *
+     * @param max
+     */
     public void tagerRandomTid(int max){
         Random r = new Random();
         int nymax = Math.abs(r.nextInt())% max +1;
@@ -19,9 +26,18 @@ public class Faelles {
         }
     }
 
+    /**
+     * Metode der returnerer global
+     *
+     * @return
+     */
     public int getGlobal() {
         return global;
     }
+
+    /**
+     * Metode der sætter global
+     */
 
     public void kritisksection(){
         int temp;
