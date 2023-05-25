@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Lek02TraedeOS/Lek02TraedeOS.iml" filepath="$PROJECT_DIR$/Lek02TraedeOS/Lek02TraedeOS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek03Concurrency/Lek03Concurrency.iml" filepath="$PROJECT_DIR$/Lek03Concurrency/Lek03Concurrency.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek04Deadlock/Lek04Deadlock.iml" filepath="$PROJECT_DIR$/Lek04Deadlock/Lek04Deadlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lek05TraadOpgaver/Lek05TraadOpgaver.iml" filepath="$PROJECT_DIR$/Lek05TraadOpgaver/Lek05TraadOpgaver.iml" />
     </modules>
   </component>
 </project>
